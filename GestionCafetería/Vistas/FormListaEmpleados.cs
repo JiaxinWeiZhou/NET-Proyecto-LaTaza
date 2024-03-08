@@ -30,17 +30,17 @@ namespace GestionCafetería.Vistas
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
+            List<Empleado> empleados = ControladorEmpleado.ObtenerListaEmpleados();
+
             listViewEmpleados.Items.Clear();
 
-            foreach (Empleado empleado in ControladorEmpleado.listaEmpleado)
+            foreach (Empleado empleado in empleados)
             {
                 ListViewItem item = new ListViewItem(empleado.IdEmpleado);
 
                 item.SubItems.Add(empleado.Nombre);
                 item.SubItems.Add(empleado.Correo);
                 item.SubItems.Add(empleado.Salario.ToString());
-
-                item.Checked = empleado.Seleccionado;
 
                 listViewEmpleados.Items.Add(item);
             }

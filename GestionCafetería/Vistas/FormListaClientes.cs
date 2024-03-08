@@ -45,7 +45,6 @@ namespace GestionCafetería.Vistas
                 item.SubItems.Add(cliente.Telefono);
                 item.SubItems.Add(cliente.Correo);
 
-                item.Checked = cliente.Seleccionado;
                 listViewClientes.Items.Add(item);
             }
         }
